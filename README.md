@@ -5,7 +5,7 @@
 # Laravel Shugars
 
 ## Features:
-- `Dockerize`
+- `Dockerize` - {`sqlite`, `mysql`, `mariadb`, `postgres`}
 - `PHPMyAdmin`
 - `PGAdmin`
 - `Env`
