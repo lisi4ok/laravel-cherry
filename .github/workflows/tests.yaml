@@ -41,7 +41,7 @@ jobs:
 
       - name: Prepare Laravel Application
         run: |
-          cp .env.example .env
+          cp .env.example.sqlite .env
           php artisan key:generate
           php artisan storage:link
           php artisan migrate
