@@ -18,7 +18,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.versions }}
-          extensions: dom, curl, libxml, openssl, fileinfo, json, xml, mbstring, zip, pcntl, pdo, gettext, sqlite3, mysqli, pgsql, pdo_sqlite, pdo_mysql, pdo_pgsql, bcmath, soap, intl, gd, exif, iconv, date, sockets
+          extensions: dom, curl, libxml, openssl, fileinfo, json, xml, mbstring, zip, pcntl, pdo, gettext, sqlite3, mysqli, pgsql, pdo_sqlite, pdo_mysql, pdo_pgsql, bcmath, soap, intl, gd, exif, iconv, date, sockets, session, tokenizer, ctype, filter, hash, pcre
           coverage: none
 
       - name: Install Composer Dependencies
