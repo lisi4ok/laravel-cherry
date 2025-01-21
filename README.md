@@ -2,8 +2,8 @@
 <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo">
 </p>
 
-# Laravel cherry
-#### Cherry picks to extend fast base Application
+# Laravel github
+#### Laravel Application Github Actions
 
 
 ## Features:
@@ -11,22 +11,25 @@
 - `PHPMyAdmin`
 - `PGAdmin`
 - `Env`
-- `tsconfig`
-- `jsconfig`
 - `GitHub Actions`
 
 ## Choose a Database and copy `ENV` file
 
 - `sqlite`
 - `mysql`
+- `mariadb`
 - `postgres`
 
 
-- `sqlite` - Copy the `.env.example` to `.env` file
+- `sqlite` - Copy the `.env.example.sqlite` to `.env` file
 
 `OR`
 
 - `mysql` - Copy the `.env.example.mysql` to `.env` file
+
+`OR`
+
+- `mariadb` - Copy the `.env.example.mariadb` to `.env` file
 
 `OR`
 
@@ -62,7 +65,7 @@ php artisan db:seed
 ## Start
 + No SQLite Database:
 ```
-docker compose -f ./docker-compose-{mysql|postgres}.yml up -d
+docker compose -f ./docker-compose-{mysql|mariadb|postgres}.yml up -d
 ```
 
 ```
