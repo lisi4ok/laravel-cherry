@@ -22,7 +22,7 @@ jobs:
           coverage: none
 
       - name: Install Composer Dependencies
-        run: composer install --optimize-autoloader --no-progress --no-interaction --prefer-dist
+        run: composer install --optimize-autoloader --no-progress --no-interaction --prefer-dist --no-scripts
 
       - name: Install Bun
         uses: oven-sh/setup-bun@v2
