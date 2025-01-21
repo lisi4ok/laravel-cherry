@@ -1,4 +1,4 @@
-name: Run tests
+name: Run Install
 
 on: [push]
 
@@ -21,9 +21,6 @@ jobs:
           extensions: dom, curl, libxml, openssl, fileinfo, json, xml, mbstring, zip, pcntl, pdo, gettext, sqlite3, mysqli, pgsql, pdo_sqlite, pdo_mysql, pdo_pgsql, bcmath, soap, intl, gd, exif, iconv, date, sockets, session, tokenizer, ctype, filter, hash, pcre
           coverage: none
 
-      - name: Install Composer Dependencies
-        run: composer install --optimize-autoloader --no-progress --no-interaction --prefer-dist --no-scripts
-
       - name: Install Bun
         uses: oven-sh/setup-bun@v2
         with:
@@ -38,17 +35,3 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: latest
-
-      - name: Prepare Laravel Application
-        run: |
-          cp .env.example .env
-          php artisan key:generate
-          php artisan storage:link
-          php artisan migrate
-          php artisan db:seed
-          php artisan clear:config
-          bun install
-          bun run build
-
-      - name: Run tests
-        run: php artisan test
