@@ -1,0 +1,21 @@
+services:
+  sqlsrv:
+    container_name: sqlsrv
+    image: mcr.microsoft.com/mssql/server:${SQLSRV_VERSION}-latest
+    restart: unless-stopped
+    environment:
+      ACCEPT_EULA: 'Y'
+      MSSQL_PID: ${MSSQL_PID}
+      MSSQL_SA_PASSWORD: ${DB_PASSWORD}
+      MSSQL_COLLATION: ${MSSQL_COLLATION}
+      MSSQL_TCP_PORT: ${DB_PORT}
+    ports:
+      - "${DB_PORT}:${DB_PORT}"
+    volumes:
+      - ./data/sqlsrv:/var/opt/mssql/data
+    networks:
+      - sqlsrv-network
+
+networks:
+  sqlsrv-network:
+    driver: bridge
